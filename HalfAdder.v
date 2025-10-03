@@ -1,8 +1,8 @@
-    module halfadder (
-    input  wire [1:0] A,
-    input  wire[1:0] B,
-    output wire[1:0] C,
-    output wire[1:0] Sum
+    module halfadder(
+    input  wire  A,
+    input  wire B,
+    output wire C,
+    output wire Sum
     );
 
     assign Sum = A ^ B;
