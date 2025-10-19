@@ -1,0 +1,84 @@
+$date
+	Sun Oct 19 23:44:26 2025
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1s
+$end
+$scope module comparator_tb $end
+$var wire 1 ! less_than $end
+$var wire 1 " greater_than $end
+$var wire 1 # equal $end
+$var reg 4 $ A [3:0] $end
+$var reg 4 % B [3:0] $end
+$scope module dut $end
+$var wire 4 & A [3:0] $end
+$var wire 4 ' B [3:0] $end
+$var reg 1 # equal $end
+$var reg 1 " greater_than $end
+$var reg 1 ! less_than $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+$end
+#0
+$dumpvars
+bx '
+bx &
+bx %
+bx $
+x#
+x"
+x!
+$end
+#10
+0"
+0!
+1#
+b0 %
+b0 '
+b0 $
+b0 &
+#20
+b1000 %
+b1000 '
+b1000 $
+b1000 &
+#30
+0#
+1"
+b100 %
+b100 '
+#40
+0"
+1!
+b1010 %
+b1010 '
+b1001 $
+b1001 &
+#50
+0!
+1"
+b1 %
+b1 '
+b100 $
+b100 &
+#60
+0"
+1!
+b110 %
+b110 '
+b10 $
+b10 &
+#70
+0!
+1"
+b1100 %
+b1100 '
+b1111 $
+b1111 &
+#80
