@@ -1,0 +1,31 @@
+module siso_tb ();
+  reg serial_in, clk, Rst;
+  wire serial_out;
+
+  siso dut(.clk(clk), .Rst(Rst), .serial_in(serial_in), .serial_out(serial_out));
+
+  initial begin
+    $dumpfile("siso.vcd");
+    $dumpvars(0,siso_tb);
+
+  end
+
+  initial begin
+    clk = 1'b0;
+    forever begin
+        #5 clk = ~clk;
+    end
+  end
+
+
+    initial begin
+        $monitor("t = %8t, CLK =%b, RST = %b, Serial_IN = %b, Serial_out = %b", $time, clk, Rst, serial_in, serial_out);
+        #10 serial_in = 1'b1; Rst = 1'b1;
+        #10 serial_in = 1'b1; Rst = 1'b0;
+        #10 serial_in = 1'b0; Rst = 1'b0;
+        #10 serial_in = 1'b1; Rst = 1'b0;
+        #40 $finish;
+        end
+
+    
+endmodule
