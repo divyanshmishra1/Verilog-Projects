@@ -8,15 +8,15 @@ module siso (
     always @(posedge clk, posedge Rst) begin
         if(Rst == 1'b1) begin
             serial_out = 1'b0;
-            B = 1'b0;
-            C = 1'b0;
-            D = 1'b0;
+            B <= 1'b0;
+            C <= 1'b0;
+            D <= 1'b0;
         end
         else begin
             serial_out = B;
-            B = C;
-            C = D;
-            D = serial_in;
+            B <= C;
+            C <= D;
+            D <= serial_in;
             
         end
     end

@@ -20,10 +20,11 @@ module siso_tb ();
 
     initial begin
         $monitor("t = %8t, CLK =%b, RST = %b, Serial_IN = %b, Serial_out = %b", $time, clk, Rst, serial_in, serial_out);
-        #10 serial_in = 1'b1; Rst = 1'b1;
-        #10 serial_in = 1'b1; Rst = 1'b0;
-        #10 serial_in = 1'b0; Rst = 1'b0;
-        #10 serial_in = 1'b1; Rst = 1'b0;
+        Rst = 1'b1; serial_in = 1'b0;
+        #12 Rst = 1'b0;       // Release reset after a bit
+        #10 serial_in = 1'b1;
+        #10 serial_in = 1'b0;
+        #10 serial_in = 1'b1;
         #40 $finish;
         end
 
