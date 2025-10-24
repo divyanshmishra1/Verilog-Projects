@@ -30,3 +30,41 @@ module siso_tb ();
 
     
 endmodule
+
+
+
+/*
+`timescale 1ns / 1ps
+
+module tb_SISO;
+    reg clk, rst, serial_in;
+    wire serial_out;
+
+    // Instantiate the design under test (DUT)
+    SISO uut (
+        .clk(clk),
+        .rst(rst),
+        .serial_in(serial_in),
+        .serial_out(serial_out)
+    );
+
+    // Generate clock: 10ns period
+    always #5 clk = ~clk;
+
+    initial begin
+        $monitor("Time=%0t | serial_in=%b | serial_out=%b", $time, serial_in, serial_out);
+
+        clk = 0; rst = 1; serial_in = 0;
+        #10 rst = 0;
+
+        // Shift in bits serially: 1,0,1,1
+        serial_in = 1; #10;
+        serial_in = 0; #10;
+        serial_in = 1; #10;
+        serial_in = 1; #10;
+
+        #20;
+        $finish;
+    end
+endmodule
+*/
